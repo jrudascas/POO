@@ -1,5 +1,6 @@
 package poo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class For {
@@ -9,6 +10,20 @@ public class For {
         int n = scanner.nextInt();
         for (int i = 1; i <= n; i++) {
             System.out.println(i);
+        }
+        
+        
+        //foreach();
+    }
+    
+    public static void foreach(){
+        ArrayList<String> a = new ArrayList();
+        a.add("Jorge");
+        a.add("Pedro");
+        a.add("Ana");
+        
+        for (String p: a) {
+            System.out.println(p);
         }
     }
 }
