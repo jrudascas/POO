@@ -8,10 +8,12 @@ public class CondicionalSimple {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese su edad: ");
         int edad = scanner.nextInt();
-        if (edad >= 21) {
+        
+        if (edad >= 21){
             System.out.println("Ud. es mayor de edad !");
-        } else {
+        }        
+        else 
             System.out.println("Ud. es es menor de edad");
-        }
+        
     }
 }

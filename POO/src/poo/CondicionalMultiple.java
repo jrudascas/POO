@@ -9,6 +9,7 @@ public class CondicionalMultiple{
         System.out.print("Ingrese un dia de la semana (numero): ");
         int v = scanner.nextInt();
         String dia;
+        
         switch (v) {
             case 1:
                 dia = "Lunes";

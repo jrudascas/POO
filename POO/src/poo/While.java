@@ -9,10 +9,9 @@ public class While {
         
         int n = scanner.nextInt();
         int i = 1;
-        while (i <= n) {
         
-            System.out.println(i);
-        
+        while (i <= n) {        
+            System.out.println(i);        
             i++;
         }
     }

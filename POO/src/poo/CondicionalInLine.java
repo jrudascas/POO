@@ -11,7 +11,15 @@ public class CondicionalInLine {
         // obtenemos el resto de dividir v por 2
         int resto = v % 2;
         // utilizando un if in-line
-        String mssg = (resto == 0) ? "es Par" : "es Impar";
+        String mssg;
+        
+        mssg = (resto == 0) ? "es Par" : "es Impar";
+                
+        /*if (resto == 0)
+            mssg = "es Par";
+        else
+            mssg = "es Impar";
+        */
         // muestro resultado
         System.out.println(v + " " + mssg);
     }
