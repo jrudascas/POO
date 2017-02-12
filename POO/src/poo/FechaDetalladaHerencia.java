@@ -20,7 +20,6 @@ public class FechaDetalladaHerencia extends Fecha {
     }
 
     @Override
-
     public String toString() {
         return getDia() + " de " + meses[getMes() - 1] + " de " + getAnio();
     }
