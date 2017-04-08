@@ -4,20 +4,15 @@
  * and open the template in the editor.
  */
 
-package poo.esfera;
+package javadocs;
 
 /**
  *
  * @author jrudascas
  */
-public class Esfera {
-    int radio;
-
-    public Esfera(int radio) {
-        this.radio = radio;
-    }
-        
-    public double getVolume(){
-        return (4*Math.PI*Math.pow(radio, 3))/3;
-    }
+public class Test {
+    
+    public static void main(String [] a){
+        Coleccion1D coleccion = new Coleccion1D(2);
+    }    
 }
