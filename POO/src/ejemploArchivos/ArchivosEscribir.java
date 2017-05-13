@@ -1,4 +1,4 @@
-package poo;
+package ejemploArchivos;
 
 import java.io.*;
 
