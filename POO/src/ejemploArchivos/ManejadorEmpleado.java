@@ -7,6 +7,8 @@ package ejemploArchivos;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +17,26 @@ import java.util.logging.Logger;
  * @author jrudasc
  */
 public class ManejadorEmpleado {
+
+    public List<Empleado> listarEmpleados() {
+        List<Empleado> listaEmpleados = new ArrayList();
+        
+        try {
+            BufferedReader br = Index.abrirArchivoLectura();            
+            String linea;
+
+            while ((linea = br.readLine()) != null) {
+                String[] campos = linea.split(";");
+                listaEmpleados.add(new Empleado(campos[1].trim(), campos[2].trim(), Integer.valueOf(campos[0]), Integer.valueOf(campos[3])));
+            }
+            
+            Index.cerrarArchivo();
+            return listaEmpleados;
+        } catch (IOException ex) {
+            Logger.getLogger(Empleado.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     public boolean guardar(Empleado e) {
         try {
@@ -33,9 +55,10 @@ public class ManejadorEmpleado {
             Index.cerrarArchivo();
 
             PrintWriter pw = Index.abrirArchivoEscritura();
-            if (!contenido.isEmpty())
+            if (!contenido.isEmpty()) {
                 pw.println(contenido);
-            
+            }
+
             pw.println(e.toString());
 
             Index.cerrarArchivo();
@@ -55,7 +78,7 @@ public class ManejadorEmpleado {
             while ((linea = br.readLine()) != null) {
 
                 String[] campos = linea.split(";");
-                if (!(Integer.parseInt(campos[0]) == e.cedula)){
+                if (!(Integer.parseInt(campos[0]) == e.cedula)) {
                     if (!contenido.isEmpty()) {
                         contenido = contenido + "\r\n" + linea;
                     } else {
@@ -68,7 +91,7 @@ public class ManejadorEmpleado {
 
             PrintWriter pw = Index.abrirArchivoEscritura();
             pw.println(contenido);
-            
+
             Index.cerrarArchivo();
             return true;
         } catch (IOException ex) {
