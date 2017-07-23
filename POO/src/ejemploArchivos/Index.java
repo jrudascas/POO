@@ -19,7 +19,7 @@ public class Index {
     public static PrintWriter pw = null;
     public static FileReader fr = null;
     public static BufferedReader br = null;
-    public static String ruta = "C:\\Users\\jrudasc\\Desktop\\Nuevo documento de texto.txt";
+    public static String ruta = "C:\\Users\\publico10\\Desktop\\11.txt";
     
     public static BufferedReader abrirArchivoLectura() {
         try {
@@ -69,9 +69,10 @@ public class Index {
         
         Empleado empleado2 = new Empleado("Daniela", "Castillo", 12345, 546465);
         
-        //manejadorEmpleado.guardar(empleado2);
+        manejadorEmpleado.guardar(empleado1);
+        manejadorEmpleado.guardar(empleado2);
         
-        manejadorEmpleado.eliminar(empleado1);
+        //manejadorEmpleado.eliminar(empleado1);
         
         
     }
